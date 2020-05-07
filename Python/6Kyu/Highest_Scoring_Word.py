@@ -1,13 +1,18 @@
+# Given a string of words, you need to find the highest scoring word.
+# Each letter of a word scores points according to its position in the alphabet.
+
 def high(x):
     x_list = list(x.split(' '))
-    bigw = ''
-    num_sum = 0
+    high_score_word = ''
+
+    high_score = 0
     for w in x_list:
-        val = ord(w - 96)
+        word_score = 0
+        for c in w:
+            val = ord(c) - 96
+            word_score += val
+        if word_score > high_score:
+            high_score = word_score
+            high_score_word = w
 
-    return maxw
-
-
-print(high('man i need a taxi up to ubud'), 'taxi')
-print(high('what time are we climbing up the volcano'), 'volcano')
-print(high('take me to semynak'), 'semynak')
+    return high_score_word
