@@ -16,3 +16,8 @@ def high(x):
             high_score_word = w
 
     return high_score_word
+
+# Community Solution
+#
+# def high(x):
+#     return max(x.split(), key=lambda k: sum(ord(c) - 96 for c in k))
